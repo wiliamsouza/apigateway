@@ -1,4 +1,4 @@
-package apigateway
+package apigateway // import "wiliam.dev/apigateway"
 
 import (
 	"encoding/json"
