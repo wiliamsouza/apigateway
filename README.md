@@ -43,7 +43,10 @@ import (
 func main() {
 	gateway := apigateway.New()
 
-	target, _ := url.Parse("https://ifconfig.co/")
+	target, err := url.Parse("https://ifconfig.co/")
+	if err != nil {
+		log.Panic("Error parsing target url")
+	}
 	proxy := apigateway.NewPassthroughReverseProxy(target)
 
 	gateway.Handle("GET", "/myip", proxy)

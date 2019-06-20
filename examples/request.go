@@ -17,7 +17,10 @@ func main() {
 		// like payload fields rename, removal and adition.
 	}
 
-	target, _ := url.Parse("https://api.example.com/v1/products/")
+	target, err := url.Parse("https://api.example.com/v1/products/")
+	if err != nil {
+		log.Panic("Error parsing target url")
+	}
 	proxy := apigateway.NewRequestTranslatorReverseProxy(target, requestTranslator)
 
 	gateway.Handle("GET", "/v2/products/", proxy)

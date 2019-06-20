@@ -18,7 +18,10 @@ func main() {
 		return nil
 	}
 
-	target, _ := url.Parse("https://api.example.com/v1/orders/:code")
+	target, err := url.Parse("https://api.example.com/v1/orders/:code")
+	if err != nil {
+		log.Panic("Error parsing target url")
+	}
 	proxy := apigateway.NewResponseTranslatorReverseProxy(target, reponseTranslator)
 
 	gateway.Handle("GET", "/v2/orders/:code", proxy)
