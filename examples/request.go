@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/wiliamsouza/apigateway"
+	"wiliam.dev/apigateway"
 )
 
 func main() {

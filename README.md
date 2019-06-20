@@ -16,7 +16,7 @@ Installation
 ------------
 
 ```bash
-go get github.com/wiliamsouza/apigateway
+go get wiliam.dev/apigateway
 ```
 
 Tests
@@ -37,7 +37,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/wiliamsouza/apigateway"
+	"wiliam.dev/apigateway"
 )
 
 func main() {
